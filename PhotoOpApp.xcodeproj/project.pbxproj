@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F6ADBE41E9D4025005179C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBE31E9D4025005179C9 /* AppDelegate.swift */; };
+		3F6ADBE61E9D4025005179C9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBE51E9D4025005179C9 /* MasterViewController.swift */; };
+		3F6ADBE81E9D4025005179C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBE71E9D4025005179C9 /* DetailViewController.swift */; };
+		3F6ADBEB1E9D4025005179C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6ADBE91E9D4025005179C9 /* Main.storyboard */; };
+		3F6ADBED1E9D4025005179C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6ADBEC1E9D4025005179C9 /* Assets.xcassets */; };
+		3F6ADBF01E9D4025005179C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6ADBEE1E9D4025005179C9 /* LaunchScreen.storyboard */; };
+		3F6ADBFB1E9D4025005179C9 /* PhotoOpAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBFA1E9D4025005179C9 /* PhotoOpAppTests.swift */; };
+		3F6ADC061E9D4025005179C9 /* PhotoOpAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADC051E9D4025005179C9 /* PhotoOpAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F6ADBF71E9D4025005179C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6ADBD81E9D4024005179C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6ADBDF1E9D4024005179C9;
+			remoteInfo = PhotoOpApp;
+		};
+		3F6ADC021E9D4025005179C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6ADBD81E9D4024005179C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6ADBDF1E9D4024005179C9;
+			remoteInfo = PhotoOpApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F6ADBE01E9D4025005179C9 /* PhotoOpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoOpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6ADBE31E9D4025005179C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F6ADBE51E9D4025005179C9 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		3F6ADBE71E9D4025005179C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3F6ADBEA1E9D4025005179C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F6ADBEC1E9D4025005179C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F6ADBEF1E9D4025005179C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F6ADBF11E9D4025005179C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6ADBF61E9D4025005179C9 /* PhotoOpAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoOpAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6ADBFA1E9D4025005179C9 /* PhotoOpAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOpAppTests.swift; sourceTree = "<group>"; };
+		3F6ADBFC1E9D4025005179C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6ADC011E9D4025005179C9 /* PhotoOpAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoOpAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6ADC051E9D4025005179C9 /* PhotoOpAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOpAppUITests.swift; sourceTree = "<group>"; };
+		3F6ADC071E9D4025005179C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F6ADBDD1E9D4024005179C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6ADBF31E9D4025005179C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6ADBFE1E9D4025005179C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F6ADBD71E9D4024005179C9 = {
+			isa = PBXGroup;
+			children = (
+				3F6ADBE21E9D4025005179C9 /* PhotoOpApp */,
+				3F6ADBF91E9D4025005179C9 /* PhotoOpAppTests */,
+				3F6ADC041E9D4025005179C9 /* PhotoOpAppUITests */,
+				3F6ADBE11E9D4025005179C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F6ADBE11E9D4025005179C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F6ADBE01E9D4025005179C9 /* PhotoOpApp.app */,
+				3F6ADBF61E9D4025005179C9 /* PhotoOpAppTests.xctest */,
+				3F6ADC011E9D4025005179C9 /* PhotoOpAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F6ADBE21E9D4025005179C9 /* PhotoOpApp */ = {
+			isa = PBXGroup;
+			children = (
+				3F6ADBE31E9D4025005179C9 /* AppDelegate.swift */,
+				3F6ADBE51E9D4025005179C9 /* MasterViewController.swift */,
+				3F6ADBE71E9D4025005179C9 /* DetailViewController.swift */,
+				3F6ADBE91E9D4025005179C9 /* Main.storyboard */,
+				3F6ADBEC1E9D4025005179C9 /* Assets.xcassets */,
+				3F6ADBEE1E9D4025005179C9 /* LaunchScreen.storyboard */,
+				3F6ADBF11E9D4025005179C9 /* Info.plist */,
+			);
+			path = PhotoOpApp;
+			sourceTree = "<group>";
+		};
+		3F6ADBF91E9D4025005179C9 /* PhotoOpAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6ADBFA1E9D4025005179C9 /* PhotoOpAppTests.swift */,
+				3F6ADBFC1E9D4025005179C9 /* Info.plist */,
+			);
+			path = PhotoOpAppTests;
+			sourceTree = "<group>";
+		};
+		3F6ADC041E9D4025005179C9 /* PhotoOpAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6ADC051E9D4025005179C9 /* PhotoOpAppUITests.swift */,
+				3F6ADC071E9D4025005179C9 /* Info.plist */,
+			);
+			path = PhotoOpAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F6ADBDF1E9D4024005179C9 /* PhotoOpApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6ADC0A1E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpApp" */;
+			buildPhases = (
+				3F6ADBDC1E9D4024005179C9 /* Sources */,
+				3F6ADBDD1E9D4024005179C9 /* Frameworks */,
+				3F6ADBDE1E9D4024005179C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoOpApp;
+			productName = PhotoOpApp;
+			productReference = 3F6ADBE01E9D4025005179C9 /* PhotoOpApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F6ADBF51E9D4025005179C9 /* PhotoOpAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6ADC0D1E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpAppTests" */;
+			buildPhases = (
+				3F6ADBF21E9D4025005179C9 /* Sources */,
+				3F6ADBF31E9D4025005179C9 /* Frameworks */,
+				3F6ADBF41E9D4025005179C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6ADBF81E9D4025005179C9 /* PBXTargetDependency */,
+			);
+			name = PhotoOpAppTests;
+			productName = PhotoOpAppTests;
+			productReference = 3F6ADBF61E9D4025005179C9 /* PhotoOpAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F6ADC001E9D4025005179C9 /* PhotoOpAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6ADC101E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpAppUITests" */;
+			buildPhases = (
+				3F6ADBFD1E9D4025005179C9 /* Sources */,
+				3F6ADBFE1E9D4025005179C9 /* Frameworks */,
+				3F6ADBFF1E9D4025005179C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6ADC031E9D4025005179C9 /* PBXTargetDependency */,
+			);
+			name = PhotoOpAppUITests;
+			productName = PhotoOpAppUITests;
+			productReference = 3F6ADC011E9D4025005179C9 /* PhotoOpAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F6ADBD81E9D4024005179C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = cmacgregor;
+				TargetAttributes = {
+					3F6ADBDF1E9D4024005179C9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					3F6ADBF51E9D4025005179C9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F6ADBDF1E9D4024005179C9;
+					};
+					3F6ADC001E9D4025005179C9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F6ADBDF1E9D4024005179C9;
+					};
+				};
+			};
+			buildConfigurationList = 3F6ADBDB1E9D4024005179C9 /* Build configuration list for PBXProject "PhotoOpApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F6ADBD71E9D4024005179C9;
+			productRefGroup = 3F6ADBE11E9D4025005179C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F6ADBDF1E9D4024005179C9 /* PhotoOpApp */,
+				3F6ADBF51E9D4025005179C9 /* PhotoOpAppTests */,
+				3F6ADC001E9D4025005179C9 /* PhotoOpAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F6ADBDE1E9D4024005179C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6ADBF01E9D4025005179C9 /* LaunchScreen.storyboard in Resources */,
+				3F6ADBED1E9D4025005179C9 /* Assets.xcassets in Resources */,
+				3F6ADBEB1E9D4025005179C9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6ADBF41E9D4025005179C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6ADBFF1E9D4025005179C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F6ADBDC1E9D4024005179C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6ADBE81E9D4025005179C9 /* DetailViewController.swift in Sources */,
+				3F6ADBE61E9D4025005179C9 /* MasterViewController.swift in Sources */,
+				3F6ADBE41E9D4025005179C9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6ADBF21E9D4025005179C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6ADBFB1E9D4025005179C9 /* PhotoOpAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6ADBFD1E9D4025005179C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6ADC061E9D4025005179C9 /* PhotoOpAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F6ADBF81E9D4025005179C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6ADBDF1E9D4024005179C9 /* PhotoOpApp */;
+			targetProxy = 3F6ADBF71E9D4025005179C9 /* PBXContainerItemProxy */;
+		};
+		3F6ADC031E9D4025005179C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6ADBDF1E9D4024005179C9 /* PhotoOpApp */;
+			targetProxy = 3F6ADC021E9D4025005179C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F6ADBE91E9D4025005179C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6ADBEA1E9D4025005179C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F6ADBEE1E9D4025005179C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6ADBEF1E9D4025005179C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F6ADC081E9D4025005179C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F6ADC091E9D4025005179C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F6ADC0B1E9D4025005179C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhotoOpApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = colin.PhotoOpApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3F6ADC0C1E9D4025005179C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhotoOpApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = colin.PhotoOpApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3F6ADC0E1E9D4025005179C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoOpAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = colin.PhotoOpAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoOpApp.app/PhotoOpApp";
+			};
+			name = Debug;
+		};
+		3F6ADC0F1E9D4025005179C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoOpAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = colin.PhotoOpAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoOpApp.app/PhotoOpApp";
+			};
+			name = Release;
+		};
+		3F6ADC111E9D4025005179C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PhotoOpAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = colin.PhotoOpAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PhotoOpApp;
+			};
+			name = Debug;
+		};
+		3F6ADC121E9D4025005179C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PhotoOpAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = colin.PhotoOpAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = PhotoOpApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F6ADBDB1E9D4024005179C9 /* Build configuration list for PBXProject "PhotoOpApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6ADC081E9D4025005179C9 /* Debug */,
+				3F6ADC091E9D4025005179C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6ADC0A1E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6ADC0B1E9D4025005179C9 /* Debug */,
+				3F6ADC0C1E9D4025005179C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3F6ADC0D1E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6ADC0E1E9D4025005179C9 /* Debug */,
+				3F6ADC0F1E9D4025005179C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3F6ADC101E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6ADC111E9D4025005179C9 /* Debug */,
+				3F6ADC121E9D4025005179C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F6ADBD81E9D4024005179C9 /* Project object */;
+}

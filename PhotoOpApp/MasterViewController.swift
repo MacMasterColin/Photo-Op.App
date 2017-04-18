@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class MasterViewController: UITableViewController {
 
@@ -38,9 +40,24 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.insertRows(at: [indexPath], with: .automatic)
+        let alert = UIAlertController(title: "Add a New Location", message: nil, preferredStyle: .alert)
+        alert.addTextField
+        {
+            (textField) in
+            textField.placeholder = "Location Name"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        let addLocation = UIAlertAction(title: "Add", style: .default)
+        {
+            (action) in
+            let nameField = alert.textFields![0] as UITextField
+            let location = Location(name: nameField.text!, tags: [String](), location: CLLocation(), image: Data())
+            self.objects.append(location)
+            self.tableView.reloadData()
+        }
+        alert.addAction(addLocation)
+        present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Segues
@@ -48,7 +65,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let object = objects[indexPath.row] as! Location
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
@@ -70,8 +87,8 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row] as! Location
+        cell.textLabel!.text = object.name
         return cell
     }
 

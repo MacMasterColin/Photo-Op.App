@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1D349A1EA673D700F3E388 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1D34991EA673D700F3E388 /* Location.swift */; };
 		3F6ADBE41E9D4025005179C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBE31E9D4025005179C9 /* AppDelegate.swift */; };
 		3F6ADBE61E9D4025005179C9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBE51E9D4025005179C9 /* MasterViewController.swift */; };
 		3F6ADBE81E9D4025005179C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBE71E9D4025005179C9 /* DetailViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F1D34991EA673D700F3E388 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		3F6ADBE01E9D4025005179C9 /* PhotoOpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoOpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6ADBE31E9D4025005179C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F6ADBE51E9D4025005179C9 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				3F6ADBE31E9D4025005179C9 /* AppDelegate.swift */,
+				3F1D34991EA673D700F3E388 /* Location.swift */,
 				3F6ADBE51E9D4025005179C9 /* MasterViewController.swift */,
 				3F6ADBE71E9D4025005179C9 /* DetailViewController.swift */,
 				3F6ADBE91E9D4025005179C9 /* Main.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				3F6ADBE81E9D4025005179C9 /* DetailViewController.swift in Sources */,
 				3F6ADBE61E9D4025005179C9 /* MasterViewController.swift in Sources */,
+				3F1D349A1EA673D700F3E388 /* Location.swift in Sources */,
 				3F6ADBE41E9D4025005179C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +513,7 @@
 				3F6ADC0C1E9D4025005179C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F6ADC0D1E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpAppTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +522,7 @@
 				3F6ADC0F1E9D4025005179C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F6ADC101E9D4025005179C9 /* Build configuration list for PBXNativeTarget "PhotoOpAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +531,7 @@
 				3F6ADC121E9D4025005179C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -32,7 +32,7 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         imagePicker.delegate = self
         if(detailItem?.image == nil)
         {
-            changePhotoAlert()
+            changePhotoAlert(message: "No Photo")
         }
         imageView.image = detailItem?.image
     }
@@ -49,9 +49,9 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         }
     }
 
-    func changePhotoAlert()
+    func changePhotoAlert(message : String)
     {
-        let alert = UIAlertController(title: "Add Photo", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: message, message: "", preferredStyle: .alert)
         let cameraAction = UIAlertAction(title: "Take a Photo Now.", style: .default)
         {
             (action) in
@@ -77,6 +77,44 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
             self.detailItem!.image = selectedImage
             self.imageView.image = selectedImage
         }
+    }
+    
+    @IBAction func onEditTapped(_ sender: Any)
+    {
+        let alert = UIAlertController()
+        let name = UIAlertAction(title: "Edit Name", style: .default)
+        {
+            (action) in
+            
+        }
+        let photo = UIAlertAction(title: "Change Photo", style: .default)
+        {
+            (action) in
+            self.changePhotoAlert(message: "Change Photo")
+        }
+        let tags = UIAlertAction(title: "Add/Remove Tags", style: .default)
+        {
+            (action) in
+            
+        }
+        let city = UIAlertAction(title: "Change City", style: .default)
+        {
+            (action) in
+            
+        }
+        let location = UIAlertAction(title: "Change Location", style: .default)
+        {
+            (action) in
+            
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(name)
+        alert.addAction(photo)
+        alert.addAction(city)
+        alert.addAction(tags)
+        alert.addAction(location)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

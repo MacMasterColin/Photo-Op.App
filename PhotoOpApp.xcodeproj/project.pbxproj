@@ -16,6 +16,7 @@
 		3F6ADBF01E9D4025005179C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6ADBEE1E9D4025005179C9 /* LaunchScreen.storyboard */; };
 		3F6ADBFB1E9D4025005179C9 /* PhotoOpAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADBFA1E9D4025005179C9 /* PhotoOpAppTests.swift */; };
 		3F6ADC061E9D4025005179C9 /* PhotoOpAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6ADC051E9D4025005179C9 /* PhotoOpAppUITests.swift */; };
+		3F7E987B1EAE5E350025EB9C /* CoreLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7E987A1EAE5E350025EB9C /* CoreLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3F6ADC011E9D4025005179C9 /* PhotoOpAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoOpAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6ADC051E9D4025005179C9 /* PhotoOpAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOpAppUITests.swift; sourceTree = "<group>"; };
 		3F6ADC071E9D4025005179C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7E987A1EAE5E350025EB9C /* CoreLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				3F1D34991EA673D700F3E388 /* Location.swift */,
 				3F6ADBE51E9D4025005179C9 /* MasterViewController.swift */,
 				3F6ADBE71E9D4025005179C9 /* DetailViewController.swift */,
+				3F7E987A1EAE5E350025EB9C /* CoreLocationViewController.swift */,
 				3F6ADBE91E9D4025005179C9 /* Main.storyboard */,
 				3F6ADBEC1E9D4025005179C9 /* Assets.xcassets */,
 				3F6ADBEE1E9D4025005179C9 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7E987B1EAE5E350025EB9C /* CoreLocationViewController.swift in Sources */,
 				3F6ADBE81E9D4025005179C9 /* DetailViewController.swift in Sources */,
 				3F6ADBE61E9D4025005179C9 /* MasterViewController.swift in Sources */,
 				3F1D349A1EA673D700F3E388 /* Location.swift in Sources */,

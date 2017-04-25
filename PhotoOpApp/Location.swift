@@ -15,9 +15,9 @@ class Location
     var name = String()
     var tags = [String]()
     var location = CLLocation()
-    var image = Data()
+    var image : UIImage?
     
-    convenience init(name : String, tags : [String], location : CLLocation, image : Data) {
+    convenience init(name : String, tags : [String], location : CLLocation, image : UIImage?) {
         self.init()
         self.name = name
         self.tags = tags

@@ -52,7 +52,7 @@ class MasterViewController: UITableViewController {
         {
             (action) in
             let nameField = alert.textFields![0] as UITextField
-            let location = Location(name: nameField.text!, tags: [String](), location: CLLocation(), image: Data())
+            let location = Location(name: nameField.text!, tags: [String](), location: CLLocation(), image: nil)
             self.objects.append(location)
             self.tableView.reloadData()
         }

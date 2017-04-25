@@ -30,6 +30,7 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         imagePicker.delegate = self
+        self.title = detailItem?.name
         if(detailItem?.image == nil)
         {
             changePhotoAlert(message: "No Photo")

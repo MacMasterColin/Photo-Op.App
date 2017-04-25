@@ -90,7 +90,7 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         let name = UIAlertAction(title: "Edit Name", style: .default)
         {
             (action) in
-            
+            self.editNameAlert()
         }
         let photo = UIAlertAction(title: "Change Photo", style: .default)
         {
@@ -120,6 +120,26 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         alert.addAction(location)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func editNameAlert()
+    {
+        let alert = UIAlertController(title: "Edit Name", message: nil, preferredStyle: .alert)
+        alert.addTextField
+        {
+            (textField) in
+            textField.text = self.detailItem?.name
+        }
+        let apply = UIAlertAction(title: "Apply", style: .default)
+        {
+            (action) in
+            self.detailItem?.name = (alert.textFields?[0].text!)!
+            self.title = self.detailItem?.name
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(apply)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
     
 }

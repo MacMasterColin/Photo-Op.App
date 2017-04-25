@@ -55,7 +55,11 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         let cameraAction = UIAlertAction(title: "Take a Photo Now.", style: .default)
         {
             (action) in
-            
+            if(UIImagePickerController.isSourceTypeAvailable(.camera))
+            {
+                self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
         }
         let libraryAction = UIAlertAction(title: "Choose from Photo Library.", style: .default)
         {

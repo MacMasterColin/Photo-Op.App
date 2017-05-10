@@ -9,19 +9,23 @@
 import Foundation
 import MapKit
 import CoreLocation
+import RealmSwift
+import Realm
 
-class Location
+class Location : Object
 {
-    var name = String()
-    var tags = [String]()
-    var location = CLLocation()
-    var image : UIImage?
+    dynamic var name = String()
+    dynamic var tag = String()
+    dynamic var x = Double()
+    dynamic var y = Double()
+    dynamic var image = Data()
     
-    convenience init(name : String, tags : [String], location : CLLocation, image : UIImage?) {
+    convenience init(name : String, tag : String, x : Double, y : Double, image : Data) {
         self.init()
         self.name = name
-        self.tags = tags
-        self.location = location
+        self.tag = tag
+        self.x = x
+        self.y = y
         self.image = image
     }
 }

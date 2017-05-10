@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
+    let realm = try! Realm()
+    
     let imagePicker = UIImagePickerController()
+    
+    
 
 
     func configureView() {
@@ -31,11 +36,11 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         self.configureView()
         imagePicker.delegate = self
         self.title = detailItem?.name
-        if(detailItem?.image == nil)
+        if(detailItem?.image == Data())
         {
             changePhotoAlert(message: "No Photo")
         }
-        imageView.image = detailItem?.image
+        imageView.image = UIImage(data: (detailItem?.image)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +84,10 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         imagePicker.dismiss(animated: true)
         {
             let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            self.detailItem!.image = selectedImage
+            try! self.realm.write
+            {
+                self.detailItem?.image = UIImagePNGRepresentation(selectedImage)!
+            }
             self.imageView.image = selectedImage
         }
     }
@@ -133,8 +141,12 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         let apply = UIAlertAction(title: "Apply", style: .default)
         {
             (action) in
-            self.detailItem?.name = (alert.textFields?[0].text!)!
+            try! self.realm.write
+            {
+                self.detailItem?.name = (alert.textFields?[0].text!)!
+            }
             self.title = self.detailItem?.name
+
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(apply)

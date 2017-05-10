@@ -9,11 +9,18 @@
 import UIKit
 import MapKit
 import CoreLocation
+import RealmSwift
+import Realm
 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
+    let realm = try! Realm()
+    lazy var locations : Results<Location> =
+    {
+            self.realm.objects(Location.self)
+    }()
 
 
     override func viewDidLoad() {
@@ -27,11 +34,16 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        for location in locations
+        {
+            objects.append(location)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +64,12 @@ class MasterViewController: UITableViewController {
         {
             (action) in
             let nameField = alert.textFields![0] as UITextField
-            let location = Location(name: nameField.text!, tags: [String](), location: CLLocation(), image: nil)
+            let location = Location(name: nameField.text!, tag: String(), x : Double(), y : Double(), image: Data())
             self.objects.append(location)
+            try! self.realm.write
+            {
+                self.realm.add(location)
+            }
             self.tableView.reloadData()
         }
         alert.addAction(addLocation)
@@ -99,7 +115,11 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
+            let location = objects.remove(at: indexPath.row) as! Location
+            try! self.realm.write
+            {
+                self.realm.delete(location)
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

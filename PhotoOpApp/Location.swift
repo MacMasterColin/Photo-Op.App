@@ -18,6 +18,7 @@ class Location : Object
     dynamic var tag = String()
     dynamic var x = Double()
     dynamic var y = Double()
+    dynamic var city = String()
     dynamic var image = Data()
     
     convenience init(name : String, tag : String, x : Double, y : Double, image : Data) {

@@ -16,6 +16,8 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     let realm = try! Realm()
     
+    @IBOutlet weak var cityLabel: UILabel!
+    
     let imagePicker = UIImagePickerController()
     
     
@@ -113,6 +115,7 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         let city = UIAlertAction(title: "Change City", style: .default)
         {
             (action) in
+            self.editCityAlert()
             
         }
         let location = UIAlertAction(title: "Change Location", style: .default)
@@ -154,5 +157,27 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         present(alert, animated: true, completion: nil)
     }
     
+    func editCityAlert()
+    {
+        let alert = UIAlertController(title: "Edit City", message: nil, preferredStyle: .alert)
+        alert.addTextField
+        {
+            (textField) in
+            textField.text = self.detailItem?.city
+        }
+        let apply = UIAlertAction(title: "Apply", style: .default)
+        {
+            (action) in
+            try! self.realm.write
+            {
+                self.detailItem?.city = (alert.textFields?[0].text!)!
+            }
+            self.cityLabel.text = self.detailItem?.city
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(apply)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
 }
 

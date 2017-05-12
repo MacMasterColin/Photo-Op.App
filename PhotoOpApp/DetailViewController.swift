@@ -16,6 +16,8 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     let realm = try! Realm()
     
+    @IBOutlet weak var tagLabel: UILabel!
+    
     @IBOutlet weak var cityLabel: UILabel!
     
     let imagePicker = UIImagePickerController()
@@ -43,6 +45,16 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
             changePhotoAlert(message: "No Photo")
         }
         imageView.image = UIImage(data: (detailItem?.image)!)
+        if(detailItem?.city == String())
+        {
+            //alert asking if you wanna add a city
+        }
+        cityLabel.text = detailItem?.city
+        if(detailItem?.tag == String())
+        {
+            //alert to ask if you wanna add a tag
+        }
+        tagLabel.text = detailItem?.tag
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,9 +119,10 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
             (action) in
             self.changePhotoAlert(message: "Change Photo")
         }
-        let tags = UIAlertAction(title: "Add/Remove Tags", style: .default)
+        let tag = UIAlertAction(title: "Edit Tag", style: .default)
         {
             (action) in
+            self.changeTagAlert()
             
         }
         let city = UIAlertAction(title: "Change City", style: .default)
@@ -127,7 +140,7 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         alert.addAction(name)
         alert.addAction(photo)
         alert.addAction(city)
-        alert.addAction(tags)
+        alert.addAction(tag)
         alert.addAction(location)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
@@ -173,6 +186,29 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
                 self.detailItem?.city = (alert.textFields?[0].text!)!
             }
             self.cityLabel.text = self.detailItem?.city
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(apply)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func changeTagAlert()
+    {
+        let alert = UIAlertController(title: "Edit Tag", message: nil, preferredStyle: .alert)
+        alert.addTextField
+            {
+                (textField) in
+                textField.text = self.detailItem?.tag
+        }
+        let apply = UIAlertAction(title: "Apply", style: .default)
+        {
+            (action) in
+            try! self.realm.write
+            {
+                self.detailItem?.tag = (alert.textFields?[0].text!)!
+            }
+            self.tagLabel.text = self.detailItem?.tag
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(apply)

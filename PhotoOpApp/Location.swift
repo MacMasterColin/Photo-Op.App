@@ -16,17 +16,17 @@ class Location : Object
 {
     dynamic var name = String()
     dynamic var tag = String()
-    dynamic var x = Double()
-    dynamic var y = Double()
+    dynamic var latitude = Double()
+    dynamic var longitude = Double()
     dynamic var city = String()
     dynamic var image = Data()
     
-    convenience init(name : String, tag : String, x : Double, y : Double, image : Data) {
+    convenience init(name : String, tag : String, latitude : Double, longitude : Double, image : Data) {
         self.init()
         self.name = name
         self.tag = tag
-        self.x = x
-        self.y = y
+        self.latitude = latitude
+        self.longitude = longitude
         self.image = image
     }
 }

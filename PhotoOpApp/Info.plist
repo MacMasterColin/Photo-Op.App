@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This App uses your current location to mark points of interest</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This Application uses images from a user&apos;s Photo Library</string>
 	<key>CFBundleDevelopmentRegion</key>

@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import CoreLocation
 
-class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
@@ -18,7 +19,11 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var tagLabel: UILabel!
     
+    @IBOutlet weak var locationLabel: UILabel!
+    
     @IBOutlet weak var cityLabel: UILabel!
+    
+    let locationManager = CLLocationManager()
     
     let imagePicker = UIImagePickerController()
     
@@ -38,6 +43,10 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         imagePicker.delegate = self
         self.title = detailItem?.name
         if(detailItem?.image == Data())
@@ -45,16 +54,51 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
             changePhotoAlert(message: "No Photo")
         }
         imageView.image = UIImage(data: (detailItem?.image)!)
-        if(detailItem?.city == String())
+        if(detailItem?.city == "")
         {
-            //alert asking if you wanna add a city
+            let alert = UIAlertController(title: "No City Entered. Would you like to add one?", message: nil, preferredStyle: .alert)
+            let yes = UIAlertAction(title: "Yes", style: .default)
+            {
+                (action) in
+                self.editCityAlert()
+            }
+            let cancel = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(yes)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
         }
         cityLabel.text = detailItem?.city
         if(detailItem?.tag == String())
         {
-            //alert to ask if you wanna add a tag
+            let alert = UIAlertController(title: "No Tag Entered. Would you like to add one?", message: nil, preferredStyle: .alert)
+            let yes = UIAlertAction(title: "Yes", style: .default)
+            {
+                (action) in
+                self.changeTagAlert()
+            }
+            let cancel = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(yes)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
         }
         tagLabel.text = detailItem?.tag
+        if(detailItem?.longitude == Double())
+        {
+            let alert = UIAlertController(title: "No Location Set. Would you like to add one?", message: nil, preferredStyle: .alert)
+            let yes = UIAlertAction(title: "Yes", style: .default)
+            {
+                (action) in
+                self.changeLocationAlert()
+            }
+            let cancel = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(yes)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            locationLabel.text = "Longitude : \(String(describing: self.detailItem!.longitude)) \n Latitude : \(String(describing: self.detailItem!.latitude))"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,7 +144,7 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
             let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             try! self.realm.write
             {
-                self.detailItem?.image = UIImagePNGRepresentation(selectedImage)!
+                self.detailItem?.image = UIImageJPEGRepresentation(selectedImage, 1)!
             }
             self.imageView.image = selectedImage
         }
@@ -134,6 +178,7 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         let location = UIAlertAction(title: "Change Location", style: .default)
         {
             (action) in
+            self.changeLocationAlert()
             
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -215,5 +260,25 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
+    
+    func changeLocationAlert()
+    {
+        let alert = UIAlertController(title: "Would you Like to Set Your Current Location?", message: nil, preferredStyle: .alert)
+        let apply = UIAlertAction(title: "Yes Please", style: .default)
+        {
+            (action) in
+            try! self.realm.write
+            {
+                self.detailItem?.longitude = (self.locationManager.location!.coordinate.longitude)
+                self.detailItem?.latitude = (self.locationManager.location!.coordinate.latitude)
+            }
+            self.locationLabel.text = "Longitude : \(String(describing: self.detailItem!.longitude)) \n Latitude : \(String(describing: self.detailItem!.latitude))"
+        }
+        let cancel = UIAlertAction(title: "No Thanks", style: .cancel, handler: nil)
+        alert.addAction(apply)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
 }
+
 

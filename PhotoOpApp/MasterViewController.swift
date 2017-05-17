@@ -64,7 +64,7 @@ class MasterViewController: UITableViewController {
         {
             (action) in
             let nameField = alert.textFields![0] as UITextField
-            let location = Location(name: nameField.text!, tag: String(), x : Double(), y : Double(), image: Data())
+            let location = Location(name: nameField.text!, tag: String(), latitude : Double(), longitude : Double(), image: Data())
             self.objects.append(location)
             try! self.realm.write
             {

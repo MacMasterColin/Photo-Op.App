@@ -14,24 +14,10 @@ class CoreLocationViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var MapView: MKMapView!
     
-    let locationManager = CLLocationManager()
+    var location : Location!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        for location in locations {
-            if location.horizontalAccuracy < 1000 && location.verticalAccuracy < 1000 {
-            }
-            let center = location.coordinate
-            let span = MKCoordinateSpanMake(0.01, 0.01)
-            let region = MKCoordinateRegionMake(center, span)
-            self.MapView.setRegion(region, animated: true)
-            locationManager.stopUpdatingLocation()
-        }
+    override func viewDidLoad()
+    {
+        let location = CLLocation(latitude: self.location.latitude, longitude: self.location.longitude)
     }
 }

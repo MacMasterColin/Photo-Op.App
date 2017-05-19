@@ -97,7 +97,9 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
         }
         else
         {
-            locationLabel.text = "Longitude : \(String(describing: self.detailItem!.longitude)) \n Latitude : \(String(describing: self.detailItem!.latitude))"
+            let lat = Double(round(100 * (self.detailItem?.latitude)!) / 100)
+            let lon = Double(round(100 * (self.detailItem?.longitude)!) / 100)
+            self.locationLabel.text = "Longitude : \(lon) \n Latitude : \(lat)"
         }
     }
 
@@ -272,12 +274,20 @@ class DetailViewController: UIViewController,UIImagePickerControllerDelegate, UI
                 self.detailItem?.longitude = (self.locationManager.location!.coordinate.longitude)
                 self.detailItem?.latitude = (self.locationManager.location!.coordinate.latitude)
             }
-            self.locationLabel.text = "Longitude : \(String(describing: self.detailItem!.longitude)) \n Latitude : \(String(describing: self.detailItem!.latitude))"
+            let lat = Double(round(100 * (self.detailItem?.latitude)!) / 100)
+            let lon = Double(round(100 * (self.detailItem?.longitude)!) / 100)
+            self.locationLabel.text = "Longitude : \(lon) \n Latitude : \(lat)"
         }
         let cancel = UIAlertAction(title: "No Thanks", style: .cancel, handler: nil)
         alert.addAction(apply)
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let dvc = segue.destination as! CoreLocationViewController
+        dvc.location = self.detailItem
     }
 }
 
